@@ -1,0 +1,57 @@
+2021-12-10 17:10:31,094 INFO  org.apache.flink.client.cli.CliFrontend                      [] - --------------------------------------------------------------------------------
+2021-12-10 17:10:31,095 INFO  org.apache.flink.client.cli.CliFrontend                      [] -  Starting Command Line Client (Version: 1.14.0, Scala: 2.11, Rev:460b386, Date:2021-09-22T08:39:40+02:00)
+2021-12-10 17:10:31,095 INFO  org.apache.flink.client.cli.CliFrontend                      [] -  OS current user: yy354
+2021-12-10 17:10:31,095 INFO  org.apache.flink.client.cli.CliFrontend                      [] -  Current Hadoop/Kerberos user: <no hadoop dependency found>
+2021-12-10 17:10:31,095 INFO  org.apache.flink.client.cli.CliFrontend                      [] -  JVM: OpenJDK 64-Bit Server VM - Ubuntu - 11/11.0.11+9-Ubuntu-0ubuntu2.18.04
+2021-12-10 17:10:31,095 INFO  org.apache.flink.client.cli.CliFrontend                      [] -  Maximum heap size: 30688 MiBytes
+2021-12-10 17:10:31,096 INFO  org.apache.flink.client.cli.CliFrontend                      [] -  JAVA_HOME: (not set)
+2021-12-10 17:10:31,096 INFO  org.apache.flink.client.cli.CliFrontend                      [] -  No Hadoop Dependency available
+2021-12-10 17:10:31,096 INFO  org.apache.flink.client.cli.CliFrontend                      [] -  JVM Options:
+2021-12-10 17:10:31,096 INFO  org.apache.flink.client.cli.CliFrontend                      [] -     -Djava.library.path=/usr/local/cuda/bin:/usr/local/cuda/lib64:/home/yy354/tensorflow/bazel-bin/tensorflow:/home/yy354/tensorflow/bazel-bin/tensorflow/java
+2021-12-10 17:10:31,096 INFO  org.apache.flink.client.cli.CliFrontend                      [] -     -Dlog.file=/home/yy354/flink-1.14.0/log/flink-yy354-client-compute28.log
+2021-12-10 17:10:31,096 INFO  org.apache.flink.client.cli.CliFrontend                      [] -     -Dlog4j.configuration=file:/home/yy354/flink-1.14.0/conf/log4j-cli.properties
+2021-12-10 17:10:31,096 INFO  org.apache.flink.client.cli.CliFrontend                      [] -     -Dlog4j.configurationFile=file:/home/yy354/flink-1.14.0/conf/log4j-cli.properties
+2021-12-10 17:10:31,096 INFO  org.apache.flink.client.cli.CliFrontend                      [] -     -Dlogback.configurationFile=file:/home/yy354/flink-1.14.0/conf/logback.xml
+2021-12-10 17:10:31,096 INFO  org.apache.flink.client.cli.CliFrontend                      [] -  Program Arguments:
+2021-12-10 17:10:31,097 INFO  org.apache.flink.client.cli.CliFrontend                      [] -     run
+2021-12-10 17:10:31,097 INFO  org.apache.flink.client.cli.CliFrontend                      [] -     examples/streaming/dairypipelinej-0.1.jar
+2021-12-10 17:10:31,097 INFO  org.apache.flink.client.cli.CliFrontend                      [] -  Classpath: /home/yy354/flink-1.14.0/lib/flink-csv-1.14.0.jar:/home/yy354/flink-1.14.0/lib/flink-json-1.14.0.jar:/home/yy354/flink-1.14.0/lib/flink-rpc-akka.jar:/home/yy354/flink-1.14.0/lib/flink-shaded-zookeeper-3.4.14.jar:/home/yy354/flink-1.14.0/lib/flink-table_2.11-1.14.0.jar:/home/yy354/flink-1.14.0/lib/libtensorflow.jar:/home/yy354/flink-1.14.0/lib/log4j-1.2-api-2.14.1.jar:/home/yy354/flink-1.14.0/lib/log4j-api-2.14.1.jar:/home/yy354/flink-1.14.0/lib/log4j-core-2.14.1.jar:/home/yy354/flink-1.14.0/lib/log4j-slf4j-impl-2.14.1.jar:/home/yy354/flink-1.14.0/lib/proto-1.15.0.jar:/home/yy354/flink-1.14.0/lib/protobuf-java-3.5.1.jar:/home/yy354/flink-1.14.0/lib/flink-dist_2.11-1.14.0.jar:::
+2021-12-10 17:10:31,097 INFO  org.apache.flink.client.cli.CliFrontend                      [] - --------------------------------------------------------------------------------
+2021-12-10 17:10:31,100 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.rpc.address, 192.168.99.28
+2021-12-10 17:10:31,100 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.rpc.port, 6123
+2021-12-10 17:10:31,100 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.memory.process.size, 16g
+2021-12-10 17:10:31,100 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: taskmanager.memory.process.size, 32g
+2021-12-10 17:10:31,100 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: taskmanager.numberOfTaskSlots, 1
+2021-12-10 17:10:31,100 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: parallelism.default, 1
+2021-12-10 17:10:31,100 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: env.java.opts, -Djava.library.path=/usr/local/cuda/bin:/usr/local/cuda/lib64:/home/yy354/tensorflow/bazel-bin/tensorflow:/home/yy354/tensorflow/bazel-bin/tensorflow/java
+2021-12-10 17:10:31,100 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.batch-shuffle-mode, ALL_EXCHANGES_PIPELINED
+2021-12-10 17:10:31,101 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.buffer-timeout, 0
+2021-12-10 17:10:31,101 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.execution.failover-strategy, region
+2021-12-10 17:10:31,101 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: cluster.fine-grained-resource-management.enabled, true
+2021-12-10 17:10:31,101 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: external-resources, src; filter; compute; sink
+2021-12-10 17:10:31,101 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: external-resource.src.driver-factory.class, edu.cornell.cs.cascade.externalresource.src.SRCDriverFactory
+2021-12-10 17:10:31,101 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: external-resource.src.amount, 1
+2021-12-10 17:10:31,101 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: external-resource.filter.driver-factory.class, edu.cornell.cs.cascade.externalresource.filter.FILTERDriverFactory
+2021-12-10 17:10:31,101 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: external-resource.filter.amount, 0
+2021-12-10 17:10:31,102 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: external-resource.compute.driver-factory.class, edu.cornell.cs.cascade.externalresource.compute.COMPUTEDriverFactory
+2021-12-10 17:10:31,102 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: external-resource.compute.amount, 0
+2021-12-10 17:10:31,102 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: external-resource.sink.driver-factory.class, edu.cornell.cs.cascade.externalresource.sink.SINKDriverFactory
+2021-12-10 17:10:31,102 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: external-resource.sink.amount, 0
+2021-12-10 17:10:31,115 INFO  org.apache.flink.client.cli.CliFrontend                      [] - Loading FallbackYarnSessionCli
+2021-12-10 17:10:31,140 INFO  org.apache.flink.core.fs.FileSystem                          [] - Hadoop is not in the classpath/dependencies. The extended set of supported File Systems via Hadoop is not available.
+2021-12-10 17:10:31,173 INFO  org.apache.flink.runtime.security.modules.HadoopModuleFactory [] - Cannot create Hadoop Security Module because Hadoop cannot be found in the Classpath.
+2021-12-10 17:10:31,179 INFO  org.apache.flink.runtime.security.modules.JaasModule         [] - Jaas file will be created as /tmp/jaas-2161928178778407928.conf.
+2021-12-10 17:10:31,184 INFO  org.apache.flink.runtime.security.contexts.HadoopSecurityContextFactory [] - Cannot install HadoopSecurityContext because Hadoop cannot be found in the Classpath.
+2021-12-10 17:10:31,185 INFO  org.apache.flink.client.cli.CliFrontend                      [] - Running 'run' command.
+2021-12-10 17:10:31,199 INFO  org.apache.flink.client.cli.CliFrontend                      [] - Building program from JAR file
+2021-12-10 17:10:31,207 INFO  org.apache.flink.client.ClientUtils                          [] - Starting program (detached: false)
+2021-12-10 17:10:31,262 INFO  org.apache.flink.api.java.typeutils.TypeExtractor            [] - class java.awt.image.BufferedImage does not contain a getter for field imageType
+2021-12-10 17:10:31,262 INFO  org.apache.flink.api.java.typeutils.TypeExtractor            [] - class java.awt.image.BufferedImage does not contain a setter for field imageType
+2021-12-10 17:10:31,262 INFO  org.apache.flink.api.java.typeutils.TypeExtractor            [] - Class class java.awt.image.BufferedImage cannot be used as a POJO type because not all fields are valid POJO fields, and must be processed as GenericType. Please read the Flink documentation on "Data Types & Serialization" for details of the effect on performance.
+2021-12-10 17:10:31,287 INFO  org.apache.flink.api.java.typeutils.TypeExtractor            [] - class java.awt.image.BufferedImage does not contain a getter for field imageType
+2021-12-10 17:10:31,287 INFO  org.apache.flink.api.java.typeutils.TypeExtractor            [] - class java.awt.image.BufferedImage does not contain a setter for field imageType
+2021-12-10 17:10:31,287 INFO  org.apache.flink.api.java.typeutils.TypeExtractor            [] - Class class java.awt.image.BufferedImage cannot be used as a POJO type because not all fields are valid POJO fields, and must be processed as GenericType. Please read the Flink documentation on "Data Types & Serialization" for details of the effect on performance.
+2021-12-10 17:10:31,569 INFO  org.apache.flink.configuration.Configuration                 [] - Config uses fallback configuration key 'jobmanager.rpc.address' instead of key 'rest.address'
+2021-12-10 17:10:31,606 INFO  org.apache.flink.client.program.rest.RestClusterClient       [] - Submitting job 'Dairy Pipeline' (616ae6f801bee840f0392eeca48b3d54).
+2021-12-10 17:10:32,167 INFO  org.apache.flink.client.program.rest.RestClusterClient       [] - Successfully submitted job 'Dairy Pipeline' (616ae6f801bee840f0392eeca48b3d54) to 'http://192.168.99.28:8081'.
+2021-12-10 17:10:35,574 INFO  org.apache.flink.configuration.Configuration                 [] - Config uses fallback configuration key 'jobmanager.rpc.address' instead of key 'rest.address'

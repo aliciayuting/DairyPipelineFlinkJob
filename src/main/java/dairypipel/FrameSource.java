@@ -32,7 +32,7 @@ public class FrameSource implements Iterator<Frame>, Serializable {
     private static final int NUM_FRAME_SAMPLES = 50;
     private final Random rand = new Random();
 
-    private int numExperiments = 500;
+    private int numExperiments;
     private String frameSize;
 
     private long frameIdx;
@@ -55,7 +55,7 @@ public class FrameSource implements Iterator<Frame>, Serializable {
     @Override
     public Frame next() {
         try {
-            TimeUnit.MILLISECONDS.sleep(50);
+            TimeUnit.MILLISECONDS.sleep(ExpConstants.INTERVAL_MILLIS);
             String imagePath = "/home/yy354/images/test200k.jpg";//String.format("%s/image0.jpg", FRAME_DIRECTORY);
             // String imagePath = String.format("%s/%s/image%d.jpg", FRAME_DIRECTORY, frameSize, rand.nextInt(NUM_FRAME_SAMPLES));
             // resize the bufferedImage frame
@@ -94,6 +94,6 @@ public class FrameSource implements Iterator<Frame>, Serializable {
     }
 
     public static DataStream<Frame> getSource(StreamExecutionEnvironment env, int numExperiments, String frameSize) {
-        return env.fromCollection(new FrameSource(numExperiments, frameSize), Frame.class);
+        return env.fromCollection(new FrameSource((int)ExpConstants.NUMBER_OF_FRAMES, frameSize), Frame.class);
     }
 }

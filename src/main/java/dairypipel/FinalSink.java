@@ -28,7 +28,7 @@ public class FinalSink implements SinkFunction<RecResult> {
     // hashmap:  ID -> BCS
 
     public static HashMap<Long, Float> results = new HashMap<Long, Float>();
-    public int TOTAL_FRAMES = 500;
+    public int TOTAL_FRAMES;
     static ArrayList<String> StartProcessTimes = new ArrayList<String>();
     static ArrayList<String> endProcessTimes = new ArrayList<String>();
 

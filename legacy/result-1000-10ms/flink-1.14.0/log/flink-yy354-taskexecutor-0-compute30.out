@@ -1,0 +1,16 @@
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.jboss.netty.util.internal.ByteBufferUtil (file:/tmp/flink-rpc-akka_e6dbf0c9-8fe0-4f61-bfaa-f759055b1c49.jar) to method java.nio.DirectByteBuffer.cleaner()
+WARNING: Please consider reporting this to the maintainers of org.jboss.netty.util.internal.ByteBufferUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2021-12-10 17:10:37.808736: I tensorflow/cc/saved_model/reader.cc:43] Reading SavedModel from: /home/yy354/models/cow_bcs/model_10steps
+2021-12-10 17:10:37.810446: I tensorflow/cc/saved_model/reader.cc:78] Reading meta graph with tags { serve }
+2021-12-10 17:10:37.810468: I tensorflow/cc/saved_model/reader.cc:119] Reading SavedModel debug info (if present) from: /home/yy354/models/cow_bcs/model_10steps
+2021-12-10 17:10:37.810509: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-12-10 17:10:39.218764: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 3021 MB memory:  -> device: 0, name: NVIDIA Tesla T4, pci bus id: 0000:d8:00.0, compute capability: 7.5
+2021-12-10 17:10:39.243063: I tensorflow/cc/saved_model/loader.cc:228] Restoring SavedModel bundle.
+2021-12-10 17:10:39.346987: I tensorflow/cc/saved_model/loader.cc:212] Running initialization op on SavedModel bundle at path: /home/yy354/models/cow_bcs/model_10steps
+2021-12-10 17:10:39.367032: I tensorflow/cc/saved_model/loader.cc:301] SavedModel load for tags { serve }; Status: success: OK. Took 1558321 microseconds.
+2021-12-10 17:10:39.849816: I tensorflow/stream_executor/cuda/cuda_dnn.cc:368] Loaded cuDNN version 8201
+2021-12-10 17:10:40.300203: I tensorflow/core/platform/default/subprocess.cc:304] Start cannot spawn child process: No such file or directory

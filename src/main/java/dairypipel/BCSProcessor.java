@@ -61,13 +61,8 @@ public class BCSProcessor implements MapFunction<Frame, RecResult> {
 		.session());
     }
 
-    static int TOTAL_FRAMES = 500;
     public static ArrayList<String> StartProcessTimes = new ArrayList<String>();
     public static ArrayList<String> endProcessTimes = new ArrayList<String>();
-
-    // public BCSProcessor(int total_frame){
-    //     TOTAL_FRAMES = total_frame;
-    // }
 
     @Override
     public RecResult map(Frame frameObj) throws Exception {
@@ -112,7 +107,7 @@ public class BCSProcessor implements MapFunction<Frame, RecResult> {
         String endTimeStamp = Long.toString(frameObj.getFrameId()) + "," + Long.toString(nano);
         endProcessTimes.add(endTimeStamp);
 
-        if(endProcessTimes.size() == TOTAL_FRAMES ){
+        if(endProcessTimes.size() >= ExpConstants.NUMBER_OF_FRAMES ){
             for(int i = 0 ; i < endProcessTimes.size(); i++){
                 LOG.info("\n---2.Before ProcessorBCS:" + StartProcessTimes.get(i));
                 LOG.info("\n---2.Finish ProcessorBCS:" + endProcessTimes.get(i));

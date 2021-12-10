@@ -1,0 +1,2196 @@
+2021-12-10 17:10:16,738 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] - --------------------------------------------------------------------------------
+2021-12-10 17:10:16,740 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -  Preconfiguration: 
+2021-12-10 17:10:16,740 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] - 
+
+
+RESOURCE_PARAMS extraction logs:
+jvm_params: -Xmx18602576904 -Xms18602576904 -XX:MaxDirectMemorySize=1207959552 -XX:MaxMetaspaceSize=268435456
+dynamic_configs: -D taskmanager.memory.network.min=1073741824b -D taskmanager.cpu.cores=1.0 -D taskmanager.memory.task.off-heap.size=0b -D taskmanager.memory.jvm-metaspace.size=268435456b -D external-resources=src -D external-resource.src.amount=1 -D taskmanager.memory.jvm-overhead.min=1073741824b -D taskmanager.memory.framework.off-heap.size=134217728b -D taskmanager.memory.network.max=1073741824b -D taskmanager.memory.framework.heap.size=134217728b -D taskmanager.memory.managed.size=13207024632b -D taskmanager.memory.task.heap.size=18468359176b -D taskmanager.numberOfTaskSlots=1 -D taskmanager.memory.jvm-overhead.max=1073741824b
+logs: WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
+INFO  [] - Loading configuration property: jobmanager.rpc.address, 192.168.99.28
+INFO  [] - Loading configuration property: jobmanager.rpc.port, 6123
+INFO  [] - Loading configuration property: jobmanager.memory.process.size, 16g
+INFO  [] - Loading configuration property: taskmanager.memory.process.size, 32g
+INFO  [] - Loading configuration property: taskmanager.numberOfTaskSlots, 1
+INFO  [] - Loading configuration property: parallelism.default, 1
+INFO  [] - Loading configuration property: env.java.opts, -Djava.library.path=/usr/local/cuda/bin:/usr/local/cuda/lib64:/home/yy354/tensorflow/bazel-bin/tensorflow:/home/yy354/tensorflow/bazel-bin/tensorflow/java
+INFO  [] - Loading configuration property: execution.batch-shuffle-mode, ALL_EXCHANGES_PIPELINED
+INFO  [] - Loading configuration property: execution.buffer-timeout, 0
+INFO  [] - Loading configuration property: jobmanager.execution.failover-strategy, region
+INFO  [] - Loading configuration property: cluster.fine-grained-resource-management.enabled, true
+INFO  [] - Loading configuration property: external-resources, src; filter; compute; sink
+INFO  [] - Loading configuration property: external-resource.src.driver-factory.class, edu.cornell.cs.cascade.externalresource.src.SRCDriverFactory
+INFO  [] - Loading configuration property: external-resource.src.amount, 1
+INFO  [] - Loading configuration property: external-resource.filter.driver-factory.class, edu.cornell.cs.cascade.externalresource.filter.FILTERDriverFactory
+INFO  [] - Loading configuration property: external-resource.filter.amount, 0
+INFO  [] - Loading configuration property: external-resource.compute.driver-factory.class, edu.cornell.cs.cascade.externalresource.compute.COMPUTEDriverFactory
+INFO  [] - Loading configuration property: external-resource.compute.amount, 0
+INFO  [] - Loading configuration property: external-resource.sink.driver-factory.class, edu.cornell.cs.cascade.externalresource.sink.SINKDriverFactory
+INFO  [] - Loading configuration property: external-resource.sink.amount, 0
+INFO  [] - The derived from fraction jvm overhead memory (3.200gb (3435973888 bytes)) is greater than its max value 1024.000mb (1073741824 bytes), max value will be used instead
+INFO  [] - The derived from fraction network memory (3.075gb (3301756158 bytes)) is greater than its max value 1024.000mb (1073741824 bytes), max value will be used instead
+WARN  [] - The amount of the 0 should be positive while finding filter. Will ignore that resource.
+WARN  [] - The amount of the 0 should be positive while finding compute. Will ignore that resource.
+WARN  [] - The amount of the 0 should be positive while finding sink. Will ignore that resource.
+INFO  [] - Final TaskExecutor Memory configuration:
+INFO  [] -   Total Process Memory:          32.000gb (34359738368 bytes)
+INFO  [] -     Total Flink Memory:          30.750gb (33017561088 bytes)
+INFO  [] -       Total JVM Heap Memory:     17.325gb (18602576904 bytes)
+INFO  [] -         Framework:               128.000mb (134217728 bytes)
+INFO  [] -         Task:                    17.200gb (18468359176 bytes)
+INFO  [] -       Total Off-heap Memory:     13.425gb (14414984184 bytes)
+INFO  [] -         Managed:                 12.300gb (13207024632 bytes)
+INFO  [] -         Total JVM Direct Memory: 1.125gb (1207959552 bytes)
+INFO  [] -           Framework:             128.000mb (134217728 bytes)
+INFO  [] -           Task:                  0 bytes
+INFO  [] -           Network:               1024.000mb (1073741824 bytes)
+INFO  [] -     JVM Metaspace:               256.000mb (268435456 bytes)
+INFO  [] -     JVM Overhead:                1024.000mb (1073741824 bytes)
+
+2021-12-10 17:10:16,741 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] - --------------------------------------------------------------------------------
+2021-12-10 17:10:16,741 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -  Starting TaskManager (Version: 1.14.0, Scala: 2.11, Rev:460b386, Date:2021-09-22T08:39:40+02:00)
+2021-12-10 17:10:16,741 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -  OS current user: yy354
+2021-12-10 17:10:16,741 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -  Current Hadoop/Kerberos user: <no hadoop dependency found>
+2021-12-10 17:10:16,741 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -  JVM: OpenJDK 64-Bit Server VM - Ubuntu - 11/11.0.11+9-Ubuntu-0ubuntu2.18.04
+2021-12-10 17:10:16,741 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -  Maximum heap size: 17744 MiBytes
+2021-12-10 17:10:16,741 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -  JAVA_HOME: (not set)
+2021-12-10 17:10:16,741 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -  No Hadoop Dependency available
+2021-12-10 17:10:16,742 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -  JVM Options:
+2021-12-10 17:10:16,742 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -Xmx18602576904
+2021-12-10 17:10:16,742 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -Xms18602576904
+2021-12-10 17:10:16,742 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -XX:MaxDirectMemorySize=1207959552
+2021-12-10 17:10:16,742 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -XX:MaxMetaspaceSize=268435456
+2021-12-10 17:10:16,742 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -Djava.library.path=/usr/local/cuda/bin:/usr/local/cuda/lib64:/home/yy354/tensorflow/bazel-bin/tensorflow:/home/yy354/tensorflow/bazel-bin/tensorflow/java
+2021-12-10 17:10:16,742 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -Dlog.file=/home/yy354/flink-1.14.0/log/flink-yy354-taskexecutor-0-compute28.log
+2021-12-10 17:10:16,742 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -Dlog4j.configuration=file:/home/yy354/flink-1.14.0/conf/log4j.properties
+2021-12-10 17:10:16,742 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -Dlog4j.configurationFile=file:/home/yy354/flink-1.14.0/conf/log4j.properties
+2021-12-10 17:10:16,742 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -Dlogback.configurationFile=file:/home/yy354/flink-1.14.0/conf/logback.xml
+2021-12-10 17:10:16,742 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -  Program Arguments:
+2021-12-10 17:10:16,743 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     --configDir
+2021-12-10 17:10:16,743 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     /home/yy354/flink-1.14.0/conf
+2021-12-10 17:10:16,743 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -D
+2021-12-10 17:10:16,743 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     taskmanager.memory.network.min=1073741824b
+2021-12-10 17:10:16,743 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -D
+2021-12-10 17:10:16,743 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     taskmanager.cpu.cores=1.0
+2021-12-10 17:10:16,743 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -D
+2021-12-10 17:10:16,743 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     taskmanager.memory.task.off-heap.size=0b
+2021-12-10 17:10:16,744 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -D
+2021-12-10 17:10:16,744 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     taskmanager.memory.jvm-metaspace.size=268435456b
+2021-12-10 17:10:16,744 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -D
+2021-12-10 17:10:16,744 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     external-resources=src
+2021-12-10 17:10:16,744 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -D
+2021-12-10 17:10:16,744 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     external-resource.src.amount=1
+2021-12-10 17:10:16,744 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -D
+2021-12-10 17:10:16,744 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     taskmanager.memory.jvm-overhead.min=1073741824b
+2021-12-10 17:10:16,744 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -D
+2021-12-10 17:10:16,744 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     taskmanager.memory.framework.off-heap.size=134217728b
+2021-12-10 17:10:16,744 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -D
+2021-12-10 17:10:16,744 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     taskmanager.memory.network.max=1073741824b
+2021-12-10 17:10:16,744 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -D
+2021-12-10 17:10:16,744 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     taskmanager.memory.framework.heap.size=134217728b
+2021-12-10 17:10:16,744 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -D
+2021-12-10 17:10:16,744 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     taskmanager.memory.managed.size=13207024632b
+2021-12-10 17:10:16,744 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -D
+2021-12-10 17:10:16,744 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     taskmanager.memory.task.heap.size=18468359176b
+2021-12-10 17:10:16,745 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -D
+2021-12-10 17:10:16,745 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     taskmanager.numberOfTaskSlots=1
+2021-12-10 17:10:16,745 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     -D
+2021-12-10 17:10:16,745 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -     taskmanager.memory.jvm-overhead.max=1073741824b
+2021-12-10 17:10:16,745 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] -  Classpath: /home/yy354/flink-1.14.0/lib/flink-csv-1.14.0.jar:/home/yy354/flink-1.14.0/lib/flink-json-1.14.0.jar:/home/yy354/flink-1.14.0/lib/flink-rpc-akka.jar:/home/yy354/flink-1.14.0/lib/flink-shaded-zookeeper-3.4.14.jar:/home/yy354/flink-1.14.0/lib/flink-table_2.11-1.14.0.jar:/home/yy354/flink-1.14.0/lib/libtensorflow.jar:/home/yy354/flink-1.14.0/lib/log4j-1.2-api-2.14.1.jar:/home/yy354/flink-1.14.0/lib/log4j-api-2.14.1.jar:/home/yy354/flink-1.14.0/lib/log4j-core-2.14.1.jar:/home/yy354/flink-1.14.0/lib/log4j-slf4j-impl-2.14.1.jar:/home/yy354/flink-1.14.0/lib/proto-1.15.0.jar:/home/yy354/flink-1.14.0/lib/protobuf-java-3.5.1.jar:/home/yy354/flink-1.14.0/lib/flink-dist_2.11-1.14.0.jar:::
+2021-12-10 17:10:16,745 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] - --------------------------------------------------------------------------------
+2021-12-10 17:10:16,746 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] - Registered UNIX signal handlers for [TERM, HUP, INT]
+2021-12-10 17:10:16,748 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] - Maximum number of open file descriptors is 10240.
+2021-12-10 17:10:16,754 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.rpc.address, 192.168.99.28
+2021-12-10 17:10:16,754 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.rpc.port, 6123
+2021-12-10 17:10:16,755 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.memory.process.size, 16g
+2021-12-10 17:10:16,755 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: taskmanager.memory.process.size, 32g
+2021-12-10 17:10:16,755 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: taskmanager.numberOfTaskSlots, 1
+2021-12-10 17:10:16,755 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: parallelism.default, 1
+2021-12-10 17:10:16,755 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: env.java.opts, -Djava.library.path=/usr/local/cuda/bin:/usr/local/cuda/lib64:/home/yy354/tensorflow/bazel-bin/tensorflow:/home/yy354/tensorflow/bazel-bin/tensorflow/java
+2021-12-10 17:10:16,755 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.batch-shuffle-mode, ALL_EXCHANGES_PIPELINED
+2021-12-10 17:10:16,755 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: execution.buffer-timeout, 0
+2021-12-10 17:10:16,756 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: jobmanager.execution.failover-strategy, region
+2021-12-10 17:10:16,756 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: cluster.fine-grained-resource-management.enabled, true
+2021-12-10 17:10:16,756 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: external-resources, src; filter; compute; sink
+2021-12-10 17:10:16,756 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: external-resource.src.driver-factory.class, edu.cornell.cs.cascade.externalresource.src.SRCDriverFactory
+2021-12-10 17:10:16,756 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: external-resource.src.amount, 1
+2021-12-10 17:10:16,756 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: external-resource.filter.driver-factory.class, edu.cornell.cs.cascade.externalresource.filter.FILTERDriverFactory
+2021-12-10 17:10:16,756 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: external-resource.filter.amount, 0
+2021-12-10 17:10:16,756 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: external-resource.compute.driver-factory.class, edu.cornell.cs.cascade.externalresource.compute.COMPUTEDriverFactory
+2021-12-10 17:10:16,756 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: external-resource.compute.amount, 0
+2021-12-10 17:10:16,757 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: external-resource.sink.driver-factory.class, edu.cornell.cs.cascade.externalresource.sink.SINKDriverFactory
+2021-12-10 17:10:16,757 INFO  org.apache.flink.configuration.GlobalConfiguration           [] - Loading configuration property: external-resource.sink.amount, 0
+2021-12-10 17:10:16,792 INFO  org.apache.flink.core.fs.FileSystem                          [] - Hadoop is not in the classpath/dependencies. The extended set of supported File Systems via Hadoop is not available.
+2021-12-10 17:10:16,824 INFO  org.apache.flink.runtime.state.changelog.StateChangelogStorageLoader [] - StateChangelogStorageLoader initialized with shortcut names {memory}.
+2021-12-10 17:10:16,827 INFO  org.apache.flink.runtime.state.changelog.StateChangelogStorageLoader [] - StateChangelogStorageLoader initialized with shortcut names {memory}.
+2021-12-10 17:10:16,839 INFO  org.apache.flink.runtime.security.modules.HadoopModuleFactory [] - Cannot create Hadoop Security Module because Hadoop cannot be found in the Classpath.
+2021-12-10 17:10:16,848 INFO  org.apache.flink.runtime.security.modules.JaasModule         [] - Jaas file will be created as /tmp/jaas-6798788774938814264.conf.
+2021-12-10 17:10:16,854 INFO  org.apache.flink.runtime.security.contexts.HadoopSecurityContextFactory [] - Cannot install HadoopSecurityContext because Hadoop cannot be found in the Classpath.
+2021-12-10 17:10:17,111 INFO  org.apache.flink.configuration.Configuration                 [] - Config uses fallback configuration key 'jobmanager.rpc.address' instead of key 'rest.address'
+2021-12-10 17:10:17,117 INFO  org.apache.flink.runtime.util.LeaderRetrievalUtils           [] - Trying to select the network interface and address to use by connecting to the leading JobManager.
+2021-12-10 17:10:17,117 INFO  org.apache.flink.runtime.util.LeaderRetrievalUtils           [] - TaskManager will try to connect for PT10S before falling back to heuristics
+2021-12-10 17:10:17,284 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] - TaskManager will use hostname/address 'compute28' (128.84.139.24) for communication.
+2021-12-10 17:10:17,315 INFO  org.apache.flink.runtime.rpc.akka.AkkaRpcServiceUtils        [] - Trying to start actor system, external address 128.84.139.24:0, bind address 0.0.0.0:0.
+2021-12-10 17:10:17,741 INFO  akka.event.slf4j.Slf4jLogger                                 [] - Slf4jLogger started
+2021-12-10 17:10:17,771 INFO  akka.remote.RemoteActorRefProvider                           [] - Akka Cluster not in use - enabling unsafe features anyway because `akka.remote.use-unsafe-remote-features-outside-cluster` has been enabled.
+2021-12-10 17:10:17,772 INFO  akka.remote.Remoting                                         [] - Starting remoting
+2021-12-10 17:10:17,910 INFO  akka.remote.Remoting                                         [] - Remoting started; listening on addresses :[akka.tcp://flink@128.84.139.24:41649]
+2021-12-10 17:10:18,012 INFO  org.apache.flink.runtime.rpc.akka.AkkaRpcServiceUtils        [] - Actor system started at akka.tcp://flink@128.84.139.24:41649
+2021-12-10 17:10:18,030 INFO  org.apache.flink.runtime.metrics.MetricRegistryImpl          [] - No metrics reporter configured, no metrics will be exposed/reported.
+2021-12-10 17:10:18,032 INFO  org.apache.flink.runtime.rpc.akka.AkkaRpcServiceUtils        [] - Trying to start actor system, external address 128.84.139.24:0, bind address 0.0.0.0:0.
+2021-12-10 17:10:18,044 INFO  akka.event.slf4j.Slf4jLogger                                 [] - Slf4jLogger started
+2021-12-10 17:10:18,047 INFO  akka.remote.RemoteActorRefProvider                           [] - Akka Cluster not in use - enabling unsafe features anyway because `akka.remote.use-unsafe-remote-features-outside-cluster` has been enabled.
+2021-12-10 17:10:18,048 INFO  akka.remote.Remoting                                         [] - Starting remoting
+2021-12-10 17:10:18,061 INFO  akka.remote.Remoting                                         [] - Remoting started; listening on addresses :[akka.tcp://flink-metrics@128.84.139.24:44323]
+2021-12-10 17:10:18,069 INFO  org.apache.flink.runtime.rpc.akka.AkkaRpcServiceUtils        [] - Actor system started at akka.tcp://flink-metrics@128.84.139.24:44323
+2021-12-10 17:10:18,079 INFO  org.apache.flink.runtime.rpc.akka.AkkaRpcService             [] - Starting RPC endpoint for org.apache.flink.runtime.metrics.dump.MetricQueryService at akka://flink-metrics/user/rpc/MetricQueryService_128.84.139.24:41649-a52b2e .
+2021-12-10 17:10:18,089 INFO  org.apache.flink.runtime.blob.PermanentBlobCache             [] - Created BLOB cache storage directory /tmp/blobStore-e077e4e2-6280-4823-8d04-98bc803455a8
+2021-12-10 17:10:18,091 INFO  org.apache.flink.runtime.blob.TransientBlobCache             [] - Created BLOB cache storage directory /tmp/blobStore-568624bf-2961-427a-8cd6-950a38d804c9
+2021-12-10 17:10:18,094 INFO  org.apache.flink.runtime.externalresource.ExternalResourceUtils [] - Enabled external resources: [src]
+2021-12-10 17:10:18,101 INFO  org.apache.flink.runtime.externalresource.ExternalResourceUtils [] - Add external resources driver for src.
+2021-12-10 17:10:18,102 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerRunner      [] - Starting TaskManager with ResourceID: 128.84.139.24:41649-a52b2e
+2021-12-10 17:10:18,115 INFO  org.apache.flink.runtime.taskexecutor.TaskManagerServices    [] - Temporary file directory '/tmp': total 1757 GB, usable 1319 GB (75.07% usable)
+2021-12-10 17:10:18,117 INFO  org.apache.flink.runtime.io.disk.iomanager.IOManager         [] - Created a new FileChannelManager for spilling of task related data to disk (joins, sorting, ...). Used directories:
+	/tmp/flink-io-c6143ebd-ab79-475a-a1e6-556e741ba3ab
+2021-12-10 17:10:18,122 INFO  org.apache.flink.runtime.io.network.netty.NettyConfig        [] - NettyConfig [server address: /0.0.0.0, server port: 0, ssl enabled: false, memory segment size (bytes): 32768, transport type: AUTO, number of server threads: 1 (manual), number of client threads: 1 (manual), server connect backlog: 0 (use Netty's default), client connect timeout (sec): 120, send/receive buffer size (bytes): 0 (use Netty's default)]
+2021-12-10 17:10:18,124 INFO  org.apache.flink.runtime.io.network.NettyShuffleServiceFactory [] - Created a new FileChannelManager for storing result partitions of BLOCKING shuffles. Used directories:
+	/tmp/flink-netty-shuffle-740a8576-b7fc-41a4-8095-b82ad9455d9d
+2021-12-10 17:10:18,607 INFO  org.apache.flink.runtime.io.network.buffer.NetworkBufferPool [] - Allocated 1024 MB for network buffer pool (number of memory segments: 32768, bytes per segment: 32768).
+2021-12-10 17:10:18,615 INFO  org.apache.flink.runtime.io.network.NettyShuffleEnvironment  [] - Starting the network environment and its components.
+2021-12-10 17:10:18,653 INFO  org.apache.flink.runtime.io.network.netty.NettyClient        [] - Transport type 'auto': using EPOLL.
+2021-12-10 17:10:18,654 INFO  org.apache.flink.runtime.io.network.netty.NettyClient        [] - Successful initialization (took 38 ms).
+2021-12-10 17:10:18,657 INFO  org.apache.flink.runtime.io.network.netty.NettyServer        [] - Transport type 'auto': using EPOLL.
+2021-12-10 17:10:18,684 INFO  org.apache.flink.runtime.io.network.netty.NettyServer        [] - Successful initialization (took 28 ms). Listening on SocketAddress /0:0:0:0:0:0:0:0%0:39499.
+2021-12-10 17:10:18,684 INFO  org.apache.flink.runtime.taskexecutor.KvStateService         [] - Starting the kvState service and its components.
+2021-12-10 17:10:18,702 INFO  org.apache.flink.runtime.rpc.akka.AkkaRpcService             [] - Starting RPC endpoint for org.apache.flink.runtime.taskexecutor.TaskExecutor at akka://flink/user/rpc/taskmanager_0 .
+2021-12-10 17:10:18,715 INFO  org.apache.flink.runtime.taskexecutor.DefaultJobLeaderService [] - Start job leader service.
+2021-12-10 17:10:18,717 INFO  org.apache.flink.runtime.filecache.FileCache                 [] - User file cache uses directory /tmp/flink-dist-cache-631b89f7-5aa7-44a1-8880-9b5f5c7ab43d
+2021-12-10 17:10:18,719 INFO  org.apache.flink.runtime.taskexecutor.TaskExecutor           [] - Connecting to ResourceManager akka.tcp://flink@192.168.99.28:6123/user/rpc/resourcemanager_*(00000000000000000000000000000000).
+2021-12-10 17:10:18,971 INFO  org.apache.flink.runtime.taskexecutor.TaskExecutor           [] - Resolved ResourceManager address, beginning registration
+2021-12-10 17:10:19,069 INFO  org.apache.flink.runtime.taskexecutor.TaskExecutor           [] - Successful registration at resource manager akka.tcp://flink@192.168.99.28:6123/user/rpc/resourcemanager_* under registration id f95dfafd1f49a821fda1eb96dd5a916d.
+2021-12-10 17:10:32,347 INFO  org.apache.flink.runtime.taskexecutor.TaskExecutor           [] - Receive slot request 421e0f7e9d7ee1369158a773554538b1 for job 616ae6f801bee840f0392eeca48b3d54 from resource manager with leader id 00000000000000000000000000000000.
+2021-12-10 17:10:32,354 INFO  org.apache.flink.runtime.taskexecutor.TaskExecutor           [] - Allocated slot for 421e0f7e9d7ee1369158a773554538b1.
+2021-12-10 17:10:32,355 INFO  org.apache.flink.runtime.taskexecutor.DefaultJobLeaderService [] - Add job 616ae6f801bee840f0392eeca48b3d54 for job leader monitoring.
+2021-12-10 17:10:32,357 INFO  org.apache.flink.runtime.taskexecutor.DefaultJobLeaderService [] - Try to register at job manager akka.tcp://flink@192.168.99.28:6123/user/rpc/jobmanager_2 with leader id 00000000-0000-0000-0000-000000000000.
+2021-12-10 17:10:32,378 INFO  org.apache.flink.runtime.taskexecutor.DefaultJobLeaderService [] - Resolved JobManager address, beginning registration
+2021-12-10 17:10:32,396 INFO  org.apache.flink.runtime.taskexecutor.DefaultJobLeaderService [] - Successful registration at job manager akka.tcp://flink@192.168.99.28:6123/user/rpc/jobmanager_2 for job 616ae6f801bee840f0392eeca48b3d54.
+2021-12-10 17:10:32,397 INFO  org.apache.flink.runtime.taskexecutor.TaskExecutor           [] - Establish JobManager connection for job 616ae6f801bee840f0392eeca48b3d54.
+2021-12-10 17:10:32,401 INFO  org.apache.flink.runtime.taskexecutor.TaskExecutor           [] - Offer reserved slots to the leader of job 616ae6f801bee840f0392eeca48b3d54.
+2021-12-10 17:10:32,425 INFO  org.apache.flink.runtime.taskexecutor.slot.TaskSlotTableImpl [] - Activate slot 421e0f7e9d7ee1369158a773554538b1.
+2021-12-10 17:10:32,450 INFO  org.apache.flink.runtime.taskexecutor.slot.TaskSlotTableImpl [] - Activate slot 421e0f7e9d7ee1369158a773554538b1.
+2021-12-10 17:10:32,462 INFO  org.apache.flink.runtime.state.changelog.StateChangelogStorageLoader [] - Creating a changelog storage with name 'memory'.
+2021-12-10 17:10:32,473 INFO  org.apache.flink.runtime.taskexecutor.TaskExecutor           [] - Received task Source: Collection Source (1/1)#0 (0440cf4a9a6e483e091d9244078cb7c9), deploy into slot with allocation id 421e0f7e9d7ee1369158a773554538b1.
+2021-12-10 17:10:32,474 INFO  org.apache.flink.runtime.taskmanager.Task                    [] - Source: Collection Source (1/1)#0 (0440cf4a9a6e483e091d9244078cb7c9) switched from CREATED to DEPLOYING.
+2021-12-10 17:10:32,479 INFO  org.apache.flink.runtime.taskmanager.Task                    [] - Loading JAR files for task Source: Collection Source (1/1)#0 (0440cf4a9a6e483e091d9244078cb7c9) [DEPLOYING].
+2021-12-10 17:10:32,484 INFO  org.apache.flink.runtime.blob.BlobClient                     [] - Downloading 616ae6f801bee840f0392eeca48b3d54/p-b9d7d8bfdee195e1261b4ece5c51cad0e65ff40f-6b76caa6adc8d4cfb8c75e73c1ec5e4c from /192.168.99.28:36113
+2021-12-10 17:10:32,581 INFO  org.apache.flink.streaming.runtime.tasks.StreamTask          [] - No state backend has been configured, using default (HashMap) org.apache.flink.runtime.state.hashmap.HashMapStateBackend@6bb6a578
+2021-12-10 17:10:32,581 INFO  org.apache.flink.runtime.state.StateBackendLoader            [] - State backend loader loads the state backend as HashMapStateBackend
+2021-12-10 17:10:32,582 INFO  org.apache.flink.streaming.runtime.tasks.StreamTask          [] - Checkpoint storage is set to 'jobmanager'
+2021-12-10 17:10:32,589 INFO  org.apache.flink.runtime.taskmanager.Task                    [] - Source: Collection Source (1/1)#0 (0440cf4a9a6e483e091d9244078cb7c9) switched from DEPLOYING to INITIALIZING.
+2021-12-10 17:10:32,649 INFO  org.apache.flink.runtime.taskmanager.Task                    [] - Source: Collection Source (1/1)#0 (0440cf4a9a6e483e091d9244078cb7c9) switched from INITIALIZING to RUNNING.
+2021-12-10 17:11:35,187 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:0,1639156232786231000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:1,1639156233167541000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:2,1639156233223870000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:3,1639156237432929000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:4,1639156237488567000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:5,1639156240837280000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:6,1639156240901656000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:7,1639156240961618000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:8,1639156241022929000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:9,1639156241078363000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:10,1639156241142147000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:11,1639156241204887000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:12,1639156241260271000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:13,1639156241317640000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:14,1639156241375738000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:15,1639156241431450000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:16,1639156241499910000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:17,1639156241563206000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:18,1639156241617500000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:19,1639156241675530000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:20,1639156241731345000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:21,1639156241794122000
+2021-12-10 17:11:35,188 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:22,1639156241857165000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:23,1639156241917711000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:24,1639156241972668000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:25,1639156242036042000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:26,1639156242112846000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:27,1639156242159156000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:28,1639156242211662000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:29,1639156242262358000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:30,1639156242309820000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:31,1639156242361030000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:32,1639156242412100000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:33,1639156242459237000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:34,1639156242514356000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:35,1639156242564002000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:36,1639156242608081000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:37,1639156242656773000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:38,1639156242702266000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:39,1639156242748538000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:40,1639156242795008000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:41,1639156242838444000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:42,1639156242888001000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:43,1639156242938841000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:44,1639156242988562000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:45,1639156243038539000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:46,1639156243084838000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:47,1639156243151017000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:48,1639156243203841000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:49,1639156243256937000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:50,1639156243312307000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:51,1639156243362794000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:52,1639156243414105000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:53,1639156243467493000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:54,1639156243526607000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:55,1639156243579667000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:56,1639156243657798000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:57,1639156243705476000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:58,1639156243751879000
+2021-12-10 17:11:35,189 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:59,1639156243828603000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:60,1639156243887398000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:61,1639156243956932000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:62,1639156244025528000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:63,1639156244089969000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:64,1639156244150003000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:65,1639156244212989000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:66,1639156244279940000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:67,1639156244349615000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:68,1639156244422386000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:69,1639156244488208000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:70,1639156244558850000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:71,1639156244641932000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:72,1639156244713574000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:73,1639156244788138000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:74,1639156244855536000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:75,1639156244928727000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:76,1639156244998586000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:77,1639156245053098000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:78,1639156245098498000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:79,1639156245148119000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:80,1639156245193605000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:81,1639156245240844000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:82,1639156245289429000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:83,1639156245342348000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:84,1639156245385780000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:85,1639156245438513000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:86,1639156245491998000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:87,1639156245543702000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:88,1639156245600291000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:89,1639156245656997000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:90,1639156245752219000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:91,1639156245812855000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:92,1639156245869161000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:93,1639156245917595000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:94,1639156245966908000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:95,1639156246015437000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:96,1639156246066743000
+2021-12-10 17:11:35,190 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:97,1639156246116557000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:98,1639156246167516000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:99,1639156246217609000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:100,1639156246267913000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:101,1639156246311866000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:102,1639156246360395000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:103,1639156246409341000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:104,1639156246451565000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:105,1639156246501130000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:106,1639156246550203000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:107,1639156246593847000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:108,1639156246636172000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:109,1639156246684067000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:110,1639156246727831000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:111,1639156246775607000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:112,1639156246824518000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:113,1639156246874955000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:114,1639156246918375000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:115,1639156246967119000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:116,1639156247015878000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:117,1639156247066787000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:118,1639156247116562000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:119,1639156247168389000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:120,1639156247217417000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:121,1639156247269502000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:122,1639156247318881000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:123,1639156247368606000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:124,1639156247435475000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:125,1639156247488465000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:126,1639156247540518000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:127,1639156247590633000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:128,1639156247633099000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:129,1639156247681872000
+2021-12-10 17:11:35,191 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:130,1639156247731129000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:131,1639156247782718000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:132,1639156247832044000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:133,1639156247882280000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:134,1639156247931853000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:135,1639156247982855000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:136,1639156248032994000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:137,1639156248075174000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:138,1639156248117938000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:139,1639156248166044000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:140,1639156248214544000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:141,1639156248264354000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:142,1639156248314584000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:143,1639156248365575000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:144,1639156248416303000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:145,1639156248459870000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:146,1639156248505706000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:147,1639156248550583000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:148,1639156248599140000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:149,1639156248647923000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:150,1639156248690512000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:151,1639156248738904000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:152,1639156248789141000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:153,1639156248839938000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:154,1639156248890412000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:155,1639156248939767000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:156,1639156248990780000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:157,1639156249041357000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:158,1639156249092264000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:159,1639156249157713000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:160,1639156249209465000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:161,1639156249259775000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:162,1639156249311224000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:163,1639156249356332000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:164,1639156249399365000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:165,1639156249447091000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:166,1639156249495868000
+2021-12-10 17:11:35,192 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:167,1639156249545800000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:168,1639156249596108000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:169,1639156249646856000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:170,1639156249697331000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:171,1639156249747114000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:172,1639156249798365000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:173,1639156249848230000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:174,1639156249899037000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:175,1639156249949119000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:176,1639156249999831000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:177,1639156250042529000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:178,1639156250091305000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:179,1639156250133857000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:180,1639156250182700000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:181,1639156250232507000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:182,1639156250274750000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:183,1639156250322491000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:184,1639156250371748000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:185,1639156250415294000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:186,1639156250460272000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:187,1639156250511065000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:188,1639156250563111000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:189,1639156250606969000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:190,1639156250651713000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:191,1639156250704123000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:192,1639156250747338000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:193,1639156250795822000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:194,1639156250846435000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:195,1639156250896927000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:196,1639156250954298000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:197,1639156251015864000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:198,1639156251103497000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:199,1639156251153752000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:200,1639156251202992000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:201,1639156251255117000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:202,1639156251301596000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:203,1639156251350109000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:204,1639156251401907000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:205,1639156251443571000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:206,1639156251489465000
+2021-12-10 17:11:35,193 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:207,1639156251541340000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:208,1639156251587906000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:209,1639156251639758000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:210,1639156251697322000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:211,1639156251756776000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:212,1639156251810683000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:213,1639156251860266000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:214,1639156251912802000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:215,1639156251969985000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:216,1639156252024211000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:217,1639156252085472000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:218,1639156252143369000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:219,1639156252195339000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:220,1639156252256234000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:221,1639156252315001000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:222,1639156252366520000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:223,1639156252426203000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:224,1639156252484554000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:225,1639156252538500000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:226,1639156252597549000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:227,1639156252654311000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:228,1639156252708109000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:229,1639156252767473000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:230,1639156252820061000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:231,1639156252876825000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:232,1639156252932789000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:233,1639156252991726000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:234,1639156253052032000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:235,1639156253107284000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:236,1639156253159326000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:237,1639156253213818000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:238,1639156253267699000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:239,1639156253322779000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:240,1639156253378143000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:241,1639156253438701000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:242,1639156253499321000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:243,1639156253559773000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:244,1639156253619389000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:245,1639156253672283000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:246,1639156253732154000
+2021-12-10 17:11:35,194 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:247,1639156253792475000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:248,1639156253869736000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:249,1639156253927775000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:250,1639156253985279000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:251,1639156254039740000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:252,1639156254089545000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:253,1639156254142009000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:254,1639156254198926000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:255,1639156254249722000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:256,1639156254300114000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:257,1639156254353466000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:258,1639156254406110000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:259,1639156254457170000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:260,1639156254499715000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:261,1639156254548322000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:262,1639156254599801000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:263,1639156254642413000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:264,1639156254685995000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:265,1639156254738419000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:266,1639156254790854000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:267,1639156254841023000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:268,1639156254892623000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:269,1639156254942326000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:270,1639156254984992000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:271,1639156255029707000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:272,1639156255080889000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:273,1639156255132362000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:274,1639156255184405000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:275,1639156255234446000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:276,1639156255276764000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:277,1639156255325852000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:278,1639156255376045000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:279,1639156255419045000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:280,1639156255468261000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:281,1639156255518545000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:282,1639156255568513000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:283,1639156255619162000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:284,1639156255669482000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:285,1639156255720328000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:286,1639156255770174000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:287,1639156255821304000
+2021-12-10 17:11:35,195 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:288,1639156255872017000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:289,1639156255923049000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:290,1639156255974966000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:291,1639156256023438000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:292,1639156256072719000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:293,1639156256123686000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:294,1639156256166475000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:295,1639156256209520000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:296,1639156256254762000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:297,1639156256305015000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:298,1639156256356414000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:299,1639156256406614000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:300,1639156256466685000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:301,1639156256527974000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:302,1639156256589719000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:303,1639156256649195000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:304,1639156256701159000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:305,1639156256755784000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:306,1639156256812187000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:307,1639156256864183000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:308,1639156256922507000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:309,1639156256981549000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:310,1639156257034096000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:311,1639156257092779000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:312,1639156257146341000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:313,1639156257205670000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:314,1639156257257915000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:315,1639156257316305000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:316,1639156257369472000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:317,1639156257425059000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:318,1639156257486799000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:319,1639156257540078000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:320,1639156257595107000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:321,1639156257657501000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:322,1639156257710908000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:323,1639156257765652000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:324,1639156257827468000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:325,1639156257889634000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:326,1639156257943570000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:327,1639156258002531000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:328,1639156258062027000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:329,1639156258122968000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:330,1639156258183418000
+2021-12-10 17:11:35,196 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:331,1639156258243769000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:332,1639156258304588000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:333,1639156258364668000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:334,1639156258425404000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:335,1639156258485741000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:336,1639156258546465000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:337,1639156258608432000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:338,1639156258668222000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:339,1639156258729362000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:340,1639156258782500000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:341,1639156258840768000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:342,1639156258901142000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:343,1639156258960282000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:344,1639156259014127000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:345,1639156259072376000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:346,1639156259126150000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:347,1639156259182842000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:348,1639156259237513000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:349,1639156259292761000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:350,1639156259354434000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:351,1639156259414965000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:352,1639156259475938000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:353,1639156259535903000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:354,1639156259598170000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:355,1639156259657899000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:356,1639156259717754000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:357,1639156259777897000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:358,1639156259838847000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:359,1639156259900143000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:360,1639156259952715000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:361,1639156260011892000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:362,1639156260064868000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:363,1639156260123791000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:364,1639156260183027000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:365,1639156260242967000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:366,1639156260303124000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:367,1639156260356115000
+2021-12-10 17:11:35,197 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:368,1639156260409637000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:369,1639156260471322000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:370,1639156260525750000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:371,1639156260586263000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:372,1639156260646141000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:373,1639156260707082000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:374,1639156260767820000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:375,1639156260821086000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:376,1639156260876363000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:377,1639156260939700000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:378,1639156260999128000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:379,1639156261052127000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:380,1639156261107688000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:381,1639156261170165000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:382,1639156261231148000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:383,1639156261293639000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:384,1639156261347295000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:385,1639156261405634000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:386,1639156261461884000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:387,1639156261524003000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:388,1639156261578339000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:389,1639156261634237000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:390,1639156261687646000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:391,1639156261746263000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:392,1639156261807246000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:393,1639156261868781000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:394,1639156261928120000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:395,1639156261980397000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:396,1639156262035802000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:397,1639156262090491000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:398,1639156262143290000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:399,1639156262201478000
+2021-12-10 17:11:35,198 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:400,1639156262259862000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:401,1639156262322536000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:402,1639156262376625000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:403,1639156262432155000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:404,1639156262485788000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:405,1639156262542018000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:406,1639156262595282000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:407,1639156262658763000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:408,1639156262721426000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:409,1639156262776367000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:410,1639156262835326000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:411,1639156262895260000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:412,1639156262956177000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:413,1639156263016294000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:414,1639156263076400000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:415,1639156263129813000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:416,1639156263183492000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:417,1639156263238519000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:418,1639156263299399000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:419,1639156263352624000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:420,1639156263411659000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:421,1639156263470925000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:422,1639156263530176000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:423,1639156263590986000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:424,1639156263651668000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:425,1639156263705641000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:426,1639156263760538000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:427,1639156263822411000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:428,1639156263875281000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:429,1639156263929053000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:430,1639156263991015000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:431,1639156264053827000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:432,1639156264114402000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:433,1639156264175115000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:434,1639156264235654000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:435,1639156264296122000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:436,1639156264357248000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:437,1639156264417382000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:438,1639156264477278000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:439,1639156264538952000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:440,1639156264592894000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:441,1639156264651469000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:442,1639156264711512000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:443,1639156264769938000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:444,1639156264821804000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:445,1639156264881118000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:446,1639156264941517000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:447,1639156265003086000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:448,1639156265056615000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:449,1639156265114781000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:450,1639156265173689000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:451,1639156265232964000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:452,1639156265286469000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:453,1639156265341910000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:454,1639156265404506000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:455,1639156265458470000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:456,1639156265512862000
+2021-12-10 17:11:35,199 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:457,1639156265574578000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:458,1639156265638017000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:459,1639156265697279000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:460,1639156265759283000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:461,1639156265818846000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:462,1639156265878717000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:463,1639156265939946000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:464,1639156266006520000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:465,1639156266068533000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:466,1639156266130273000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:467,1639156266191740000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:468,1639156266252267000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:469,1639156266314077000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:470,1639156266373405000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:471,1639156266433225000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:472,1639156266493566000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:473,1639156266554584000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:474,1639156266615619000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:475,1639156266675331000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:476,1639156266735523000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:477,1639156266796112000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:478,1639156266857065000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:479,1639156266918434000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:480,1639156266971467000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:481,1639156267026185000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:482,1639156267087455000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:483,1639156267148020000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:484,1639156267210663000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:485,1639156267271763000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:486,1639156267325316000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:487,1639156267380970000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:488,1639156267434017000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:489,1639156267492685000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:490,1639156267544619000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:491,1639156267599039000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:492,1639156267660727000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:493,1639156267721578000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:494,1639156267783459000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:495,1639156267843715000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:496,1639156267905204000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:497,1639156267964372000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:498,1639156268025809000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:499,1639156268085085000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:500,1639156268145990000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:501,1639156268199891000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:502,1639156268260418000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:503,1639156268316483000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:504,1639156268369502000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:505,1639156268423450000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:506,1639156268486803000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:507,1639156268551524000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:508,1639156268607752000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:509,1639156268669930000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:510,1639156268731177000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:511,1639156268792148000
+2021-12-10 17:11:35,200 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:512,1639156268845119000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:513,1639156268906232000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:514,1639156268964846000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:515,1639156269023491000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:516,1639156269076282000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:517,1639156269134849000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:518,1639156269196925000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:519,1639156269256089000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:520,1639156269309036000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:521,1639156269363696000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:522,1639156269426107000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:523,1639156269487403000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:524,1639156269549249000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:525,1639156269607239000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:526,1639156269667421000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:527,1639156269720966000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:528,1639156269774091000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:529,1639156269828549000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:530,1639156269894112000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:531,1639156269953165000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:532,1639156270009226000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:533,1639156270065258000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:534,1639156270123802000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:535,1639156270175713000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:536,1639156270234546000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:537,1639156270293295000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:538,1639156270357704000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:539,1639156270415770000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:540,1639156270468451000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:541,1639156270526396000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:542,1639156270578411000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:543,1639156270636532000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:544,1639156270699689000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:545,1639156270753396000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:546,1639156270809487000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:547,1639156270867815000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:548,1639156270921086000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:549,1639156270980056000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:550,1639156271040520000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:551,1639156271101481000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:552,1639156271163537000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:553,1639156271217873000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:554,1639156271273611000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:555,1639156271333665000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:556,1639156271386462000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:557,1639156271445361000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:558,1639156271506273000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:559,1639156271565565000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:560,1639156271618416000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:561,1639156271677247000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:562,1639156271737191000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:563,1639156271799563000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:564,1639156271857884000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:565,1639156271917109000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:566,1639156271978699000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:567,1639156272038707000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:568,1639156272101404000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:569,1639156272155763000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:570,1639156272218121000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:571,1639156272273590000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:572,1639156272334195000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:573,1639156272387374000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:574,1639156272441789000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:575,1639156272503566000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:576,1639156272564024000
+2021-12-10 17:11:35,201 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:577,1639156272624563000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:578,1639156272685197000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:579,1639156272746565000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:580,1639156272806433000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:581,1639156272860621000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:582,1639156272918476000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:583,1639156272971935000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:584,1639156273030651000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:585,1639156273090988000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:586,1639156273144394000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:587,1639156273203444000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:588,1639156273261475000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:589,1639156273313856000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:590,1639156273371809000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:591,1639156273424189000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:592,1639156273483246000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:593,1639156273545862000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:594,1639156273598884000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:595,1639156273657412000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:596,1639156273717061000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:597,1639156273776761000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:598,1639156273838006000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:599,1639156273898185000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:600,1639156273951342000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:601,1639156274010160000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:602,1639156274062950000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:603,1639156274122045000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:604,1639156274181456000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:605,1639156274241745000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:606,1639156274302350000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:607,1639156274362739000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:608,1639156274423140000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:609,1639156274482440000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:610,1639156274544111000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:611,1639156274604281000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:612,1639156274659044000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:613,1639156274715406000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:614,1639156274768854000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:615,1639156274824057000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:616,1639156274886351000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:617,1639156274939807000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:618,1639156274998607000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:619,1639156275059723000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:620,1639156275118829000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:621,1639156275180542000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:622,1639156275240760000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:623,1639156275303645000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:624,1639156275357270000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:625,1639156275415832000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:626,1639156275474119000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:627,1639156275533755000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:628,1639156275587156000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:629,1639156275640802000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:630,1639156275698488000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:631,1639156275757126000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:632,1639156275817088000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:633,1639156275877540000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:634,1639156275966700000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:635,1639156276023832000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:636,1639156276076411000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:637,1639156276133430000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:638,1639156276187754000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:639,1639156276238535000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:640,1639156276295904000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:641,1639156276349777000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:642,1639156276406625000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:643,1639156276460634000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:644,1639156276517446000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:645,1639156276571722000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:646,1639156276629336000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:647,1639156276683011000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:648,1639156276740211000
+2021-12-10 17:11:35,202 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:649,1639156276794119000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:650,1639156276851643000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:651,1639156276906010000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:652,1639156276963986000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:653,1639156277014057000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:654,1639156277064031000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:655,1639156277116906000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:656,1639156277173536000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:657,1639156277228770000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:658,1639156277285788000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:659,1639156277338986000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:660,1639156277395686000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:661,1639156277449106000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:662,1639156277499703000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:663,1639156277557008000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:664,1639156277611661000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:665,1639156277670196000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:666,1639156277723927000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:667,1639156277773389000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:668,1639156277830212000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:669,1639156277884436000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:670,1639156277940923000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:671,1639156277995567000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:672,1639156278053287000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:673,1639156278106839000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:674,1639156278167634000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:675,1639156278220592000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:676,1639156278274652000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:677,1639156278327667000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:678,1639156278384410000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:679,1639156278437081000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:680,1639156278488754000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:681,1639156278545150000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:682,1639156278599193000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:683,1639156278656872000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:684,1639156278711268000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:685,1639156278765450000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:686,1639156278819410000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:687,1639156278872312000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:688,1639156278928521000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:689,1639156278981764000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:690,1639156279034462000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:691,1639156279092307000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:692,1639156279146570000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:693,1639156279203791000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:694,1639156279256823000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:695,1639156279307569000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:696,1639156279365037000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:697,1639156279418012000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:698,1639156279475265000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:699,1639156279529921000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:700,1639156279586712000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:701,1639156279640112000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:702,1639156279696453000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:703,1639156279750175000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:704,1639156279807392000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:705,1639156279861177000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:706,1639156279918256000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:707,1639156279971655000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:708,1639156280028768000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:709,1639156280082964000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:710,1639156280139338000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:711,1639156280193505000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:712,1639156280245849000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:713,1639156280302455000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:714,1639156280352070000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:715,1639156280402385000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:716,1639156280452844000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:717,1639156280506869000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:718,1639156280563906000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:719,1639156280614226000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:720,1639156280661789000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:721,1639156280709853000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:722,1639156280766444000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:723,1639156280820399000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:724,1639156280878262000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:725,1639156280932625000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:726,1639156280989512000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:727,1639156281040274000
+2021-12-10 17:11:35,203 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:728,1639156281091251000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:729,1639156281143794000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:730,1639156281200866000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:731,1639156281254290000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:732,1639156281311126000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:733,1639156281364506000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:734,1639156281422085000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:735,1639156281475024000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:736,1639156281527398000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:737,1639156281584083000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:738,1639156281637158000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:739,1639156281694117000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:740,1639156281747327000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:741,1639156281799999000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:742,1639156281857404000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:743,1639156281907876000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:744,1639156281962002000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:745,1639156282012175000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:746,1639156282070599000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:747,1639156282123836000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:748,1639156282180650000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:749,1639156282235667000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:750,1639156282286395000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:751,1639156282344635000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:752,1639156282395266000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:753,1639156282445881000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:754,1639156282503204000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:755,1639156282557385000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:756,1639156282614908000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:757,1639156282668671000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:758,1639156282726656000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:759,1639156282779737000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:760,1639156282836364000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:761,1639156282890690000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:762,1639156282947891000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:763,1639156283002042000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:764,1639156283059150000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:765,1639156283112534000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:766,1639156283168819000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:767,1639156283223211000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:768,1639156283280330000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:769,1639156283331446000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:770,1639156283380442000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:771,1639156283435090000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:772,1639156283487042000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:773,1639156283544510000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:774,1639156283595837000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:775,1639156283650202000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:776,1639156283707429000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:777,1639156283757332000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:778,1639156283810160000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:779,1639156283866399000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:780,1639156283915119000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:781,1639156283970000000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:782,1639156284020815000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:783,1639156284072712000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:784,1639156284129189000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:785,1639156284182593000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:786,1639156284234078000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:787,1639156284290760000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:788,1639156284338189000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:789,1639156284386815000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:790,1639156284443376000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:791,1639156284492072000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:792,1639156284545519000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:793,1639156284594748000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:794,1639156284649668000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:795,1639156284699561000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:796,1639156284756834000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:797,1639156284810332000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:798,1639156284867148000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:799,1639156284920758000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:800,1639156284977574000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:801,1639156285031882000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:802,1639156285089277000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:803,1639156285143470000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:804,1639156285194039000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:805,1639156285251836000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:806,1639156285305223000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:807,1639156285363677000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:808,1639156285413638000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:809,1639156285464311000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:810,1639156285521411000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:811,1639156285575339000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:812,1639156285623313000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:813,1639156285671797000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:814,1639156285721549000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:815,1639156285771488000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:816,1639156285822644000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:817,1639156285873081000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:818,1639156285923246000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:819,1639156285966393000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:820,1639156286010886000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:821,1639156286062329000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:822,1639156286113949000
+2021-12-10 17:11:35,204 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:823,1639156286165454000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:824,1639156286215454000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:825,1639156286269259000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:826,1639156286314869000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:827,1639156286367325000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:828,1639156286419026000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:829,1639156286468497000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:830,1639156286511271000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:831,1639156286560077000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:832,1639156286608592000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:833,1639156286652813000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:834,1639156286700307000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:835,1639156286742311000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:836,1639156286790192000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:837,1639156286833355000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:838,1639156286882014000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:839,1639156286931142000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:840,1639156286982905000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:841,1639156287025295000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:842,1639156287073186000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:843,1639156287123748000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:844,1639156287173877000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:845,1639156287216783000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:846,1639156287258935000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:847,1639156287306313000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:848,1639156287355265000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:849,1639156287398481000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:850,1639156287447589000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:851,1639156287497031000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:852,1639156287548133000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:853,1639156287598326000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:854,1639156287648408000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:855,1639156287699301000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:856,1639156287748667000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:857,1639156287800312000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:858,1639156287850246000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:859,1639156287900230000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:860,1639156287950799000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:861,1639156288000797000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:862,1639156288044284000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:863,1639156288088788000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:864,1639156288132767000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:865,1639156288182804000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:866,1639156288234470000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:867,1639156288283380000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:868,1639156288325869000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:869,1639156288373776000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:870,1639156288417114000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:871,1639156288461316000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:872,1639156288512812000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:873,1639156288557390000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:874,1639156288606100000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:875,1639156288657449000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:876,1639156288707379000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:877,1639156288757596000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:878,1639156288799548000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:879,1639156288848561000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:880,1639156288898983000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:881,1639156288940983000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:882,1639156288989705000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:883,1639156289040401000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:884,1639156289090958000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:885,1639156289141609000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:886,1639156289191904000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:887,1639156289241743000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:888,1639156289292273000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:889,1639156289342874000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:890,1639156289392644000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:891,1639156289443127000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:892,1639156289492737000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:893,1639156289543468000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:894,1639156289586727000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:895,1639156289629618000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:896,1639156289676921000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:897,1639156289726026000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:898,1639156289775562000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:899,1639156289825581000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:900,1639156289876624000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:901,1639156289927977000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:902,1639156289978481000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:903,1639156290026671000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:904,1639156290078276000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:905,1639156290120202000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:906,1639156290168348000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:907,1639156290220344000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:908,1639156290270585000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:909,1639156290320318000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:910,1639156290371222000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:911,1639156290421098000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:912,1639156290471516000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:913,1639156290522316000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:914,1639156290572368000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:915,1639156290622439000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:916,1639156290679523000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:917,1639156290737280000
+2021-12-10 17:11:35,205 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:918,1639156290791824000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:919,1639156290847173000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:920,1639156290897823000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:921,1639156290951271000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:922,1639156291000524000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:923,1639156291052951000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:924,1639156291109207000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:925,1639156291162509000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:926,1639156291214950000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:927,1639156291271643000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:928,1639156291325596000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:929,1639156291382444000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:930,1639156291436108000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:931,1639156291492433000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:932,1639156291545638000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:933,1639156291597258000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:934,1639156291647230000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:935,1639156291704265000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:936,1639156291757943000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:937,1639156291814690000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:938,1639156291864453000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:939,1639156291919781000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:940,1639156291977874000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:941,1639156292031404000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:942,1639156292088131000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:943,1639156292141355000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:944,1639156292197502000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:945,1639156292252028000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:946,1639156292302085000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:947,1639156292359646000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:948,1639156292408972000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:949,1639156292462779000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:950,1639156292515026000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:951,1639156292571711000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:952,1639156292625731000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:953,1639156292682452000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:954,1639156292735460000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:955,1639156292784532000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:956,1639156292837499000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:957,1639156292894323000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:958,1639156292947464000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:959,1639156293000162000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:960,1639156293050924000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:961,1639156293108171000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:962,1639156293161326000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:963,1639156293218719000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:964,1639156293273074000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:965,1639156293330485000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:966,1639156293381163000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:967,1639156293438074000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:968,1639156293492031000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:969,1639156293544185000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:970,1639156293601376000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:971,1639156293655608000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:972,1639156293713175000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:973,1639156293765972000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:974,1639156293822620000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:975,1639156293876630000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:976,1639156293934033000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:977,1639156293986833000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:978,1639156294043389000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:979,1639156294096688000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:980,1639156294148356000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:981,1639156294204975000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:982,1639156294258358000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:983,1639156294315057000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:984,1639156294369326000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:985,1639156294425643000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:986,1639156294479096000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:987,1639156294530221000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:988,1639156294581936000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:989,1639156294638901000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:990,1639156294693359000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:991,1639156294750859000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:992,1639156294804436000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:993,1639156294861747000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:994,1639156294914738000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:995,1639156294971151000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:996,1639156295024610000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:997,1639156295081005000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:998,1639156295134077000
+2021-12-10 17:11:35,206 INFO  dairypipel.FrameSource                                       [] - 
+---0. Frame Sent:999,1639156295187501000
+2021-12-10 17:11:35,220 INFO  org.apache.flink.runtime.taskmanager.Task                    [] - Source: Collection Source (1/1)#0 (0440cf4a9a6e483e091d9244078cb7c9) switched from RUNNING to FINISHED.
+2021-12-10 17:11:35,220 INFO  org.apache.flink.runtime.taskmanager.Task                    [] - Freeing task resources for Source: Collection Source (1/1)#0 (0440cf4a9a6e483e091d9244078cb7c9).
+2021-12-10 17:11:35,222 INFO  org.apache.flink.runtime.taskexecutor.TaskExecutor           [] - Un-registering task and sending final execution state FINISHED to JobManager for task Source: Collection Source (1/1)#0 0440cf4a9a6e483e091d9244078cb7c9.
+2021-12-10 17:11:35,391 INFO  org.apache.flink.runtime.taskexecutor.slot.TaskSlotTableImpl [] - Free slot TaskSlot(index:1, state:ACTIVE, resource profile: ResourceProfile{cpuCores=1, taskHeapMemory=1024.000mb (1073741824 bytes), taskOffHeapMemory=0 bytes, managedMemory=0 bytes, networkMemory=320.000kb (327680 bytes), src=1}, allocationId: 421e0f7e9d7ee1369158a773554538b1, jobId: 616ae6f801bee840f0392eeca48b3d54).
+2021-12-10 17:11:35,395 INFO  org.apache.flink.runtime.taskexecutor.DefaultJobLeaderService [] - Remove job 616ae6f801bee840f0392eeca48b3d54 from job leader monitoring.
+2021-12-10 17:11:35,396 INFO  org.apache.flink.runtime.taskexecutor.TaskExecutor           [] - Close JobManager connection for job 616ae6f801bee840f0392eeca48b3d54.

@@ -5,4 +5,5 @@ dairypipel/DairyPipelineJob.class
 dairypipel/RecProcessor.class
 dairypipel/LoggerOutputFormat.class
 dairypipel/FinalSink.class
+dairypipel/ExpConstants.class
 dairypipel/FrameSource.class

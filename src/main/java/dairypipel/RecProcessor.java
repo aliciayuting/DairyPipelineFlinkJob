@@ -57,7 +57,6 @@ public class RecProcessor implements MapFunction<Frame, Frame> {
                     .build()).build().toByteArray())
                     .withTags("serve").load().session());
     }
-    public static int TOTAL_FRAMES = 500;
     public static ArrayList<String> StartProcessTimes = new ArrayList<String>();
     public static ArrayList<String> endProcessTimes = new ArrayList<String>();
 
@@ -103,7 +102,7 @@ public class RecProcessor implements MapFunction<Frame, Frame> {
         String endTimeStamp = Long.toString(frameObj.getFrameId()) + "," + Long.toString(nano);
         endProcessTimes.add(endTimeStamp);
 
-        if(endProcessTimes.size() == TOTAL_FRAMES ){
+        if(endProcessTimes.size() == ExpConstants.NUMBER_OF_FRAMES){
             for(int i = 0 ; i < endProcessTimes.size(); i++){
                 LOG.info("\n---1.Before ProcessorRec:" + StartProcessTimes.get(i));
                 LOG.info("\n---1.Finish ProcessorRec:" + endProcessTimes.get(i));
