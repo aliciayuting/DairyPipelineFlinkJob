@@ -1,0 +1,8 @@
+dairypipel/Frame.class
+dairypipel/RecResult.class
+dairypipel/BCSProcessor.class
+dairypipel/DairyPipelineJob.class
+dairypipel/RecProcessor.class
+dairypipel/LoggerOutputFormat.class
+dairypipel/FinalSink.class
+dairypipel/FrameSource.class
